@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  nexus-engine:
+    build: ./engine
+    restart: always
+    network_mode: "host"
+
+  nexus-dashboard:
+    build: ./web-dashboard
+    ports:
+      - "3000:3000"
+    depends_on:
+      - nexus-engine
+    environment:
+      - NEXT_PUBLIC_WS_URL=ws://localhost:8765
