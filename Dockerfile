@@ -1,4 +1,5 @@
 # Composite Dockerfile for Python (Bot) and Node.js (Dashboard)
+# Build Heartbeat: 2026-02-12
 FROM node:20-slim as node-builder
 WORKDIR /app/web-dashboard
 COPY web-dashboard/package*.json ./
